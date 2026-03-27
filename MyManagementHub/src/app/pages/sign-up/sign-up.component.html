@@ -1,0 +1,49 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h2 class="mb-4">Sign in to your account</h2>
+        <form [formGroup]="form" (ngSubmit)="signup(form.value)">
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Enter your username"  formControlName="userName"/>
+            <label class="form-label" for="form3Example3">Username</label>
+          </div>
+          <div  data-mdb-input-init class="form-outline mb-3">
+            <div class="input-group">
+              <input class="form-control form-control-lg" [type]="passwordFieldTextType ? 'text' : 'password'" name="password" formControlName="password" placeholder="Enter password"/>
+              <div class="input-group-append">
+                  <span class="form-control form-control-lg">
+                    <i class="fa" [ngClass]="{'fa-eye-slash': !passwordFieldTextType,'fa-eye': passwordFieldTextType}" (click)="togglePasswordFieldTextType()"></i>
+                  </span>
+              </div>
+            </div>
+            <label class="form-label" for="form3Example4">Password</label>
+            </div>
+          <div  data-mdb-input-init class="form-outline mb-3">
+            <div class="input-group">
+              <input class="form-control form-control-lg" [type]="passwordFieldTextTypeVerify ? 'text' : 'password'" name="passwordVerify" formControlName="passwordVerify" placeholder="Verify password"/>
+              <div class="input-group-append">
+                  <span class="form-control form-control-lg">
+                    <i class="fa" [ngClass]="{'fa-eye-slash': !passwordFieldTextTypeVerify,'fa-eye': passwordFieldTextTypeVerify}" (click)="togglePasswordFieldTextTypeVerify()"></i>
+                  </span>
+              </div>
+            </div>
+            <label class="form-label" for="form3Example4">Verify Password</label>
+            @if (errorPassword()) {
+              <p class="invalid">Passwords do not match.</p>
+            }
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button  type="submit" class="btn btn-primary btn-lg">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
+            <a class="link-danger" routerLink="/sign-up" routerLinkActive="active">Register</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+    </div>
+  </div>
+</section>
