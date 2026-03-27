@@ -1,0 +1,16 @@
+.main-container {
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        margin-left: 88px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .main-container {
+        padding-top: 5.2rem;
+    }
+}
