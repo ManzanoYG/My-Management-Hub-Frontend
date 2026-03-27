@@ -1,0 +1,39 @@
+.card {
+  background-color: #282828;
+  color: #FFFFF1;
+  border: none;
+}
+
+.app-icon {
+  font-size: 1.2rem;
+  color: #8A8A8A;
+  margin: 0px 5px 35px -10px;
+}
+
+.fa-caret-right {
+  font-size: 1.2rem !important;
+  padding: 0 !important;
+  color: #8A8A8A;
+}
+
+.alert {
+  border: none;
+  margin-bottom: 1rem;
+  padding: 0.55rem !important;
+  max-width: fit-content;
+  font-size: 0.775rem;
+}
+
+.btn {
+  background-color: transparent;
+  border-color: #8A8A8A;
+}
+
+.btn:hover{
+  background-color: #8a8a8a75;
+  border-color: #8A8A8A;
+}
+
+.card-text {
+  margin-bottom: 25px;
+}

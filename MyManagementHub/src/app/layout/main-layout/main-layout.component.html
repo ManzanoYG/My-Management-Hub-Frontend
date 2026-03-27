@@ -1,0 +1,49 @@
+<div class="container-lg my-3">
+  <div class="row">
+    @if (isConnected()) {
+      @for (app of apps(); track app.id) {
+        <div class="col-xl-4 col-md-6 col-xxl-3 my-3">
+          <div class="card" style="width: 300px;">
+              <div class="card-body">
+                  <h5 class="card-title"><i class="{{ app.icon }} mt-3 app-icon"></i> {{ app.name }}</h5>
+                  <p class="card-text">{{ app.description }}</p>
+                  @if (app.status == 'Active') {
+                    <div class="alert alert-success">
+                      <i class="fa-solid fa-circle-exclamation"></i> {{ app.status }}
+                    </div>
+                  } @else if (app.status == 'Error') {
+                    <div class="alert alert-danger">
+                      <i class="fa-solid fa-triangle-exclamation"></i> {{ app.status }}
+                    </div>
+                  } @else if (app.status == 'Works in Progress') {
+                    <div class="alert alert-info">
+                      <i class="fa-solid fa-gear"></i> {{ app.status }}
+                    </div>
+                  } @else if (app.status == 'Unavailable') {
+                    <div class="alert alert-info">
+                      <i class="fa-solid fa-xmark"></i> {{ app.status }}
+                    </div>
+                  } @else if (app.status == 'Maintenance') {
+                    <div class="alert alert-warning">
+                      <i class="fa-solid fa-triangle-exclamation"></i> {{ app.status }}
+                    </div>
+                  }
+                  <a type="button" routerLink="{{ app.route }}" routerLinkActive="active" class="btn btn-primary"><i class="fa-solid fa-caret-right"></i> Go to {{ app.name }}</a>
+              </div>
+          </div>
+        </div>
+      }
+    } @else {
+      <div class="col-12 my-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Welcome to My Management Hub</h5>
+            <p class="card-text">Please log in to access your applications and manage your resources.</p>
+            <a type="button" routerLink="sign-in" routerLinkActive="active" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log In</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+        
