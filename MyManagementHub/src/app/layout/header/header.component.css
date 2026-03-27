@@ -1,0 +1,115 @@
+:host {
+	display: block;
+}
+
+.logo {
+	border-radius: 10px;
+	object-fit: contain;
+}
+
+.sidebar-collapsed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 88px;
+	padding: 1rem 0.75rem;
+	background: linear-gradient(180deg, #1f2327 0%, #181b1f 100%);
+	border-right: 1px solid rgba(255, 255, 255, 0.08);
+	z-index: 1040;
+	align-items: center;
+}
+
+.sidebar-logo {
+	width: 56px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-actions {
+	margin-top: 1.5rem;
+	flex: 1;
+	justify-content: center;
+}
+
+.sidebar-icon-btn {
+	width: 56px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	font-size: 1.1rem;
+}
+
+.sidebar-bottom-text {
+	margin-top: auto;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 0.66rem;
+	line-height: 1.35;
+}
+
+.mobile-topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 68px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1rem;
+	background: linear-gradient(90deg, #1f2327 0%, #181b1f 100%);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	z-index: 1050;
+}
+
+.mobile-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+	color: #fff;
+}
+
+.mobile-brand-text {
+	font-size: 0.95rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.mobile-menu-toggle {
+	width: 42px;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+#mobileSidebar {
+	width: min(80vw, 300px);
+}
+
+.mobile-bottom-text {
+	font-size: 0.8rem;
+}
+
+@media (max-width: 420px) {
+	.mobile-brand-text {
+		display: none;
+	}
+}
+
+.logged-in {
+  color: green;
+}
+
+.logged-out {
+  color: red;
+}
