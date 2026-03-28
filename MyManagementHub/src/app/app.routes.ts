@@ -3,10 +3,10 @@ import { roleGuard } from './core/guards/role.guard';
 
 export const routes: Routes = [
 	{
-		path: '',
+		path: 'home',
 		loadComponent: () =>
 			import('./layout/main-layout/main-layout.component').then((m) => m.MainLayout),
-		canActivate: [roleGuard],
+			canActivate: [roleGuard],
 	},
 	{
 		path: 'sign-in',
@@ -19,7 +19,13 @@ export const routes: Routes = [
 			import('./pages/sign-up/sign-up.component').then((m) => m.SignUp),
 	},
 	{
+		path: 'settings',
+		loadComponent: () =>
+			import('./pages/settings/settings.component').then((m) => m.Settings),
+			canActivate: [roleGuard],
+	},
+	{
 		path: '**',
-		redirectTo: '',
+		redirectTo: 'home',
 	},
 ];

@@ -1,5 +1,5 @@
 <nav class="mobile-topbar d-md-none" aria-label="Mobile top navigation">
-  <a class="mobile-brand" routerLink="" aria-label="Go to home">
+  <a class="mobile-brand" routerLink="home" aria-label="Go to home">
     <img ngSrc="assets/images/myManagementHubLogo.png" width="38" height="38" class="logo" alt="My Management Hub"/>
     <span class="mobile-brand-text">My Management Hub</span>
   </a>
@@ -12,16 +12,16 @@
     <img ngSrc="assets/images/myManagementHubLogo.png" width="45" height="45" class="logo" alt="My Management Hub"/>
   </a>
   <div class="sidebar-actions d-flex flex-column gap-2">
+    <button type="button" class="btn btn-outline-light sidebar-icon-btn" routerLink="home" routerLinkActive="active" aria-label="Home" title="Home">
+        <i class="fa-solid fa-house" aria-hidden="true"></i>
+    </button>
     @if (!isConnected()) {
       <button class="btn btn-outline-light sidebar-icon-btn" routerLink="sign-in" routerLinkActive="active" aria-label="Log in" title="Log In">
         <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
       </button>
     }
     @if (isConnected()) {
-      <button type="button" class="btn btn-outline-light sidebar-icon-btn" routerLink="" routerLinkActive="active" aria-label="Home" title="Home">
-        <i class="fa-solid fa-house" aria-hidden="true"></i>
-      </button>
-      <button type="button" class="btn btn-outline-light sidebar-icon-btn" aria-label="Settings" title="Settings" >
+      <button type="button" class="btn btn-outline-light sidebar-icon-btn" routerLink="settings" routerLinkActive="active" aria-label="Settings" title="Settings">
         <i class="fa-solid fa-gear" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-outline-light sidebar-icon-btn" (click)="logout()" aria-label="Logout" title="Logout">
@@ -37,7 +37,7 @@
 </aside>
 <div class="offcanvas offcanvas-start text-bg-dark d-md-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
   <div class="offcanvas-header">
-    <a class="d-flex align-items-center gap-2 text-decoration-none text-light" routerLink="" data-bs-dismiss="offcanvas" aria-label="Go to home">
+    <a class="d-flex align-items-center gap-2 text-decoration-none text-light" routerLink="home" data-bs-dismiss="offcanvas" aria-label="Go to home">
       <img ngSrc="assets/images/myManagementHubLogo.png" width="36" height="36" class="logo" alt="My Management Hub"/>
       <span id="mobileSidebarLabel" class="fw-semibold">My Management Hub</span>
     </a>
@@ -45,6 +45,10 @@
   </div>
   <div class="offcanvas-body d-flex flex-column justify-content-between">
     <div class="d-flex flex-column gap-2">
+      <button type="button" class="btn btn-outline-light d-flex align-items-center gap-2" routerLink="home" routerLinkActive="active" aria-label="Home" title="Home">
+        <i class="fa-solid fa-house" aria-hidden="true"></i>
+        <span>Home</span>
+      </button>
       @if (!isConnected()) {
         <a class="btn btn-outline-light d-flex align-items-center gap-2" routerLink="sign-in" routerLinkActive="active" data-bs-dismiss="offcanvas">
           <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
@@ -52,11 +56,7 @@
         </a>
       }
       @if (isConnected()) {
-        <button type="button" class="btn btn-outline-light d-flex align-items-center gap-2" routerLink="" routerLinkActive="active" aria-label="Home" title="Home">
-          <i class="fa-solid fa-house" aria-hidden="true"></i>
-          <span>Home</span>
-        </button>
-        <button type="button" class="btn btn-outline-light d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-outline-light d-flex align-items-center gap-2" routerLink="settings" routerLinkActive="active" data-bs-dismiss="offcanvas">
           <i class="fa-solid fa-gear" aria-hidden="true"></i>
           <span>Settings</span>
         </button>

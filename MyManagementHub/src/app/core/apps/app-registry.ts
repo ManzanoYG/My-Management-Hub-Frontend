@@ -57,6 +57,15 @@ export const APP_REGISTRY: readonly HubAppEntry[] = [
     allowedRoles: [0, 1],
   },
   {
+    id: 'recipe-manager-app',
+    name: 'Recipe Manager',
+    route: '/recipe-manager',
+    icon: 'fa-solid fa-bell-concierge',
+    description: 'Manage your recipes',
+    status: 'Works in Progress',
+    allowedRoles: [0, 1],
+  },
+  {
     id: 'watch-list-app',
     name: 'Watch List',
     route: '/watch-list',
@@ -64,5 +73,14 @@ export const APP_REGISTRY: readonly HubAppEntry[] = [
     description: 'Manage your watch list',
     status: 'Works in Progress',
     allowedRoles: [0, 1],
+  },
+  {
+    id: 'admin-panel-app',
+    name: 'Admin Panel',
+    route: '/admin-panel',
+    icon: 'fa-solid fa-user-shield',
+    description: 'Manage the application',
+    status: 'Works in Progress',
+    allowedRoles: [1],
   }
 ] as const;

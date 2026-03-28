@@ -33,7 +33,7 @@ export class SignIn {
     this._authService.login(this.login).subscribe({
       next: (response) => {
         this.errorPassword.set(false);
-        this._router.navigate(['']);
+        this._router.navigate(['home']);
       },
       error: (err) => {
         this.errorPassword.set(true);
