@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, catchError, of, map } from 'rxjs';
 import { DtoInputLogin } from '../../pages/sign-in/dto/dto-input-login';
 import { DtoOutputToken } from '../../pages/sign-in/dto/dto-output-token';
 
@@ -39,5 +39,18 @@ export class AuthService {
         next: () => this._isConnected.set(true),
         error: () => this._isConnected.set(false),
       });
+  }
+
+  verifyConnection(): Observable<boolean> {
+    return this._httpClient
+      .get<any>(`${AuthService._BASE_URL_API}/IsConnected`, { withCredentials: true })
+      .pipe(
+        tap(() => this._isConnected.set(true)),
+        map(() => true),
+        catchError(() => {
+          this._isConnected.set(false);
+          return of(false);
+        })
+      );
   }
 }
