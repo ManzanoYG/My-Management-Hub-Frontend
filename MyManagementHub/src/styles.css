@@ -1,7 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
 html, body {
-    padding:0;
-    margin:0;
-    height: 100%;
-    background-color: #121212;
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-bg);
+}
+
+:root {
+    --body-bg: #121212;
+
+    --text-color: #fffff1;
+    --text-soft: #c8ccd4;
+
+    --card-bg: #282828;
+    --card-border: rgba(0,0,0,.125);
+
+    --button-bg: transparent;
+    --button-border: #8A8A8A;
+    --button-hover-bg: #8a8a8a75;
+    --button-hover-border: #8A8A8A;
+    --button-active-bg: #fffff1;
+    --button-active-border: #aaa5a5;
+    --button-text-color: #09090b;
+
+    --accent: #4cc9f0;
+    --accent-soft: rgba(76, 201, 240, 0.3);
+
+    --nav-bg-collapsed: linear-gradient(180deg, #1f2327 0%, #181b1f 100%);
+    --mobile-topbar-bg: linear-gradient(90deg, #1f2327 0%, #181b1f 100%);
+    --nav-border: rgba(255, 255, 255, 0.08);
+    --nav-logged-in: green;
+    --nav-not-logged-in: red;
+
+    --icon-color: #8A8A8A;
+
+    --panel-bg: rgba(30, 34, 39, 0.86);
+    --panel-border: rgba(255, 255, 255, 0.14);
+
+    --invalid-text: #ff6b6b;    
+    
+    --showcase-bg: radial-gradient(circle at top right, #27303a 0%, #191d22 58%, #121417 100%);
+    --showcase-bg-alt: radial-gradient(circle at top left, #27303a 0%, #191d22 58%, #121417 100%);
+
+    --box-shadow:rgba(0, 0, 0, 0.35);
+    --point-icon-bg: rgba(255, 255, 255, 0.12);
+    --glow-top-bg: rgba(76, 201, 240, 0.22);
+    --glow-bottom-bg: rgba(169, 112, 255, 0.14);
+
+    --form-bg: rgba(255, 255, 255, 0.06);
+    --form-border: rgba(255, 255, 255, 0.16);
+    --form-placeholder: #adb5bd;
+    --form-bg-focus: rgba(255, 255, 255, 0.1);
+
+    --link-color-active: #8A8A8A;
+    --link-bg-active: #8a8a8a75;
+}
+
+.light-theme {
+    --body-bg: #F8F8F8;
+
+    --text-color: #09090b;
+    --text-soft: #09090b75;
+
+    --card-bg: #FFFFFF;
+    --card-border: #EEEEEE;
+
+    --button-bg: #f8f8f8;
+    --button-border: #e8e8e8;
+    --button-hover-bg: #E2E2E2;
+    --button-hover-border: #e8e8e8;
+    --button-active-bg: #E2E2E2;
+    --button-active-border: #aaa5a5;
+    --button-text-color: #09090b;
+
+    --accent: #B3360F;
+    --accent-soft: rgba(179, 54, 15, 0.3);
+
+    --nav-bg-collapsed: linear-gradient(180deg, #E0DCD8 0%, #E7E4E0 100%);
+    --mobile-topbar-bg: linear-gradient(90deg, #E0DCD8 0%, #E7E4E0 100%);
+    --nav-border: rgba(0, 0, 0, 0.08);
+    --nav-logged-in: green;
+    --nav-not-logged-in: red;
+
+    --icon-color: #757575;
+
+    --panel-bg: rgba(225, 221, 216, 0.86);
+    --panel-border: rgba(0, 0, 0, 0.14);
+
+    --invalid-text: #ff6b6b;
+    
+    --showcase-bg: radial-gradient(circle at top right, #D8CFC5 0%, #E6E2DD 58%, #EDEBE8 100%);
+    --showcase-bg-alt: radial-gradient(circle at top left, #D8CFC5 0%, #E6E2DD 58%, #EDEBE8 100%);
+
+    --box-shadow:rgba(255, 255, 255, 0.35);
+    --point-icon-bg: rgba(0, 0, 0, 0.12);
+    --glow-top-bg: rgba(179, 54, 15, 0.22);
+    --glow-bottom-bg: rgba(86, 143, 0, 0.14);
+
+    --form-bg: rgba(0, 0, 0, 0.06);
+    --form-border: rgba(0, 0, 0, 0.16);
+    --form-placeholder: #524A42;
+    --form-bg-focus: rgba(0, 0, 0, 0.1);
+
+    --link-color-active: #757575;
+    --link-bg-active: #75757575;
+}
+
+.purple-theme {
+    --accent: #a970ff;
+    --accent-soft: rgba(169, 112, 255, 0.3);
+}
+
