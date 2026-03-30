@@ -1,1 +1,208 @@
-<p>settings works!</p>
+<div class="card card-top" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Settings</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">You can manage your account settings here.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+<div class="container">
+    <div class="row gutters-sm">
+        <div class="col-md-4 d-none d-md-block">
+            <div class="card">
+                <div class="card-body">
+                    <nav class="nav flex-column nav-pills nav-gap-y-1">
+                        <a href="#profile" (click)="$event.preventDefault(); setActiveTab('profile')" class="nav-item nav-link has-icon nav-link-faded" [class.active]="isTab('profile')" [attr.aria-selected]="isTab('profile')">
+                            <i class="fa-regular fa-user"></i> Profile Information
+                        </a>
+                        <a href="#security" (click)="$event.preventDefault(); setActiveTab('security')" class="nav-item nav-link has-icon nav-link-faded" [class.active]="isTab('security')" [attr.aria-selected]="isTab('security')">
+                            <i class="fa-solid fa-shield"></i> Security
+                        </a>
+                        <a href="#preferences" (click)="$event.preventDefault(); setActiveTab('preferences')" class="nav-item nav-link has-icon nav-link-faded" [class.active]="isTab('preferences')" [attr.aria-selected]="isTab('preferences')">
+                            <i class="fa-solid fa-sliders"></i> Preferences
+                        </a>
+                        <a href="#notification" (click)="$event.preventDefault(); setActiveTab('notification')" class="nav-item nav-link has-icon nav-link-faded" [class.active]="isTab('notification')" [attr.aria-selected]="isTab('notification')">
+                            <i class="fa-regular fa-bell"></i> Notification
+                        </a>
+                        <a href="#account" (click)="$event.preventDefault(); setActiveTab('account')" class="nav-item nav-link has-icon nav-link-faded" [class.active]="isTab('account')" [attr.aria-selected]="isTab('account')">
+                            <i class="fa-solid fa-gears"></i> Account Settings
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                    <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                        <li class="nav-item">
+                            <a href="#profile" (click)="$event.preventDefault(); setActiveTab('profile')" class="nav-link has-icon" [class.active]="isTab('profile')"><i class="fa-regular fa-user"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#security" (click)="$event.preventDefault(); setActiveTab('security')" class="nav-link has-icon" [class.active]="isTab('security')"><i class="fa-solid fa-shield"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#preferences" (click)="$event.preventDefault(); setActiveTab('preferences')" class="nav-link has-icon" [class.active]="isTab('preferences')"><i class="fa-solid fa-sliders"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#notification" (click)="$event.preventDefault(); setActiveTab('notification')" class="nav-link has-icon" [class.active]="isTab('notification')"><i class="fa-solid fa-bell"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#account" (click)="$event.preventDefault(); setActiveTab('account')" class="nav-link has-icon" [class.active]="isTab('account')"><i class="fa-solid fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane" id="profile" [class.active]="isTab('profile')" [class.show]="isTab('profile')" [class.d-none]="!isTab('profile')">
+                        <h6>YOUR PROFILE INFORMATION</h6>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter your username" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="timezone">Timezone</label>
+                                <input type="text" class="form-control" id="timezone" placeholder="Enter your timezone" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <input type="text" class="form-control" id="language" placeholder="Enter your language" value="">
+                            </div>
+                            <div class="form-group small text-muted">
+                                All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears.
+                            </div>
+                            <button type="button" class="btn btn-primary">Update Profile</button>
+                            <button type="reset" class="btn btn-light">Reset Changes</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="security" [class.active]="isTab('security')" [class.show]="isTab('security')" [class.d-none]="!isTab('security')">
+                        <h6>SECURITY SETTINGS</h6>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label class="d-block">Change Password</label>
+                                <input type="text" class="form-control" placeholder="Enter your old password">
+                                <input type="text" class="form-control mt-1" placeholder="New password">
+                                <input type="text" class="form-control mt-1" placeholder="Confirm new password">
+                            </div>
+                        </form>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label class="d-block">Two Factor Authentication</label>
+                                <button class="btn btn-info" type="button">Enable two-factor authentication</button>
+                                <p class="small text-muted mt-2">Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.</p>
+                            </div>
+                        </form>
+                        <hr>
+                    </div>
+                    <div class="tab-pane" id="preferences" [class.active]="isTab('preferences')" [class.show]="isTab('preferences')" [class.d-none]="!isTab('preferences')">
+                        <h6>PREFERENCES</h6>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label for="theme">Theme</label>
+                                <input type="text" class="form-control" id="theme" aria-describedby="themeHelp" placeholder="Enter your theme" value="">
+                                <div>
+                                <h2>Choisir un thème :</h2>
+                                @for (theme of themes; track theme) {
+                                    <button (click)="changeTheme(theme)">
+                                    {{ theme }}
+                                    </button>
+                                }
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sidebar">Sidebar</label>
+                                <input type="text" class="form-control" id="sidebar" aria-describedby="sidebarHelp" placeholder="Enter your sidebar preference" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="appOrder">App Order</label>
+                                <input type="text" class="form-control" id="appOrder" aria-describedby="appOrderHelp" placeholder="Enter your app order" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="appDisplay">App Display</label>
+                                <input type="text" class="form-control" id="appDisplay" aria-describedby="appDisplayHelp" placeholder="Enter your app display preference" value="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="notification" [class.active]="isTab('notification')" [class.show]="isTab('notification')" [class.d-none]="!isTab('notification')">
+                        <h6>NOTIFICATION SETTINGS</h6>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label class="d-block mb-0">Security Alerts</label>
+                                <div class="small text-muted mb-3">Receive security alert notifications via email</div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+                                    <label class="custom-control-label" for="customCheck1">Email each time a vulnerability is found</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2" checked="">
+                                    <label class="custom-control-label" for="customCheck2">Email a digest summary of vulnerability</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-0">
+                                <label class="d-block">SMS Notifications</label>
+                                <ul class="list-group list-group-sm">
+                                    <li class="list-group-item has-icon">
+                                        Comments
+                                        <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item has-icon">
+                                        Updates From People
+                                        <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                            <label class="custom-control-label" for="customSwitch2"></label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item has-icon">
+                                        Reminders
+                                        <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch3" checked="">
+                                            <label class="custom-control-label" for="customSwitch3"></label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item has-icon">
+                                        Events
+                                        <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch4" checked="">
+                                            <label class="custom-control-label" for="customSwitch4"></label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item has-icon">
+                                        Pages You Follow
+                                        <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch5">
+                                            <label class="custom-control-label" for="customSwitch5"></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="account" [class.active]="isTab('account')" [class.show]="isTab('account')" [class.d-none]="!isTab('account')">
+                        <h6>ACCOUNT SETTINGS</h6>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label class="d-block text-danger">Delete Account</label>
+                                <p class="text-muted font-size-sm">Once you delete your account, there is no going back. Please be certain.</p>
+                            </div>
+                            <button class="btn btn-danger" type="button">Delete Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
