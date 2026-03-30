@@ -14,8 +14,8 @@
 	bottom: 0;
 	width: 88px;
 	padding: 1rem 0.75rem;
-	background: linear-gradient(180deg, #1f2327 0%, #181b1f 100%);
-	border-right: 1px solid rgba(255, 255, 255, 0.08);
+	background: var(--nav-bg-collapsed);
+	border-right: 1px solid var(--nav-border);
 	z-index: 1040;
 	align-items: center;
 }
@@ -27,7 +27,7 @@
 	align-items: center;
 	justify-content: center;
 	border-radius: 12px;
-	background: rgba(255, 255, 255, 0.08);
+	background: var(--nav-border);
 }
 
 .sidebar-actions {
@@ -49,7 +49,7 @@
 .sidebar-bottom-text {
 	margin-top: auto;
 	text-align: center;
-	color: rgba(255, 255, 255, 0.75);
+	color: var(--text-color);
 	font-size: 0.66rem;
 	line-height: 1.35;
 }
@@ -64,8 +64,8 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 1rem;
-	background: linear-gradient(90deg, #1f2327 0%, #181b1f 100%);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	background:	var(--mobile-topbar-bg);
+	border-bottom: 1px solid var(--nav-border);
 	z-index: 1050;
 }
 
@@ -74,7 +74,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	text-decoration: none;
-	color: #fff;
+	color: var(--text-color);
 }
 
 .mobile-brand-text {
@@ -94,6 +94,8 @@
 
 #mobileSidebar {
 	width: min(80vw, 300px);
+	background:	var(--mobile-topbar-bg) !important;
+	border-bottom: 1px solid var(--nav-border) !important;
 }
 
 .mobile-bottom-text {
@@ -107,9 +109,27 @@
 }
 
 .logged-in {
-  color: green;
+  color: var(--nav-logged-in);
 }
 
 .logged-out {
-  color: red;
+  color: var(--nav-not-logged-in);
+}
+
+.btn {
+	background-color: var(--button-bg);
+	color: var(--text-color);
+  	border-color: var(--button-border);
+}
+
+.btn:hover {
+	background-color: var(--button-hover-bg);
+	color: var(--text-color);
+  	border-color: var(--button-hover-border);
+}
+
+.btn.active {
+	background-color: var(--button-active-bg);
+	border: 1px solid var(--button-active-border);
+	color: var(--button-text-color);
 }

@@ -1,19 +1,19 @@
 .card {
-  background-color: #282828;
-  color: #FFFFF1;
-  border: none;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
 }
 
 .app-icon {
   font-size: 1.2rem;
-  color: #8A8A8A;
+  color: var(--icon-color);
   margin: 0px 5px 35px -10px;
 }
 
 .fa-caret-right {
   font-size: 1.2rem !important;
   padding: 0 !important;
-  color: #8A8A8A;
+  color: var(--icon-color);
 }
 
 .alert {
@@ -25,13 +25,14 @@
 }
 
 .btn {
-  background-color: transparent;
-  border-color: #8A8A8A;
+  background-color: var(--button-bg);
+  border-color: var(--button-border);
+  color: var(--text-color) !important;
 }
 
 .btn:hover{
-  background-color: #8a8a8a75;
-  border-color: #8A8A8A;
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
 }
 
 .card-text {
