@@ -1,6 +1,6 @@
 <nav class="mobile-topbar d-md-none" aria-label="Mobile top navigation">
   <a class="mobile-brand" routerLink="home" aria-label="Go to home">
-    <img ngSrc="assets/images/myManagementHubLogo.png" width="38" height="38" class="logo" alt="My Management Hub"/>
+    <img ngSrc="{{logoPath}}" width="38" height="38" class="logo" alt="My Management Hub"/>
     <span class="mobile-brand-text">My Management Hub</span>
   </a>
   <button class="btn btn-outline-light mobile-menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Open menu">
@@ -9,7 +9,7 @@
 </nav>
 <aside class="sidebar-collapsed d-none d-md-flex flex-column" aria-label="Main menu">
   <a class="sidebar-logo" routerLink="" aria-label="Go to home">
-    <img ngSrc="assets/images/myManagementHubLogo.png" width="45" height="45" class="logo" alt="My Management Hub"/>
+    <img ngSrc="{{logoPath}}" width="45" height="45" class="logo" alt="My Management Hub"/>
   </a>
   <div class="sidebar-actions d-flex flex-column gap-2">
     <button type="button" class="btn btn-outline-light sidebar-icon-btn" routerLink="home" routerLinkActive="active" aria-label="Home" title="Home">
@@ -38,7 +38,7 @@
 <div class="offcanvas offcanvas-start text-bg-dark d-md-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
   <div class="offcanvas-header">
     <a class="d-flex align-items-center gap-2 text-decoration-none text-light" routerLink="home" data-bs-dismiss="offcanvas" aria-label="Go to home">
-      <img ngSrc="assets/images/myManagementHubLogo.png" width="36" height="36" class="logo" alt="My Management Hub"/>
+      <img ngSrc="{{logoPath}}" width="36" height="36" class="logo" alt="My Management Hub"/>
       <span id="mobileSidebarLabel" class="fw-semibold">My Management Hub</span>
     </a>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>

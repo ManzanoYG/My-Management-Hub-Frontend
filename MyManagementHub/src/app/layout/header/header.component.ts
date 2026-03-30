@@ -4,6 +4,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { JwtRoleService } from '../../core/auth/jwt-role.service';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -16,9 +17,11 @@ export class Header {
   private _authService = inject(AuthService);
   private _jwtRoleService = inject(JwtRoleService);
   private _cdr = inject(ChangeDetectorRef);
+  private _themeService = inject(ThemeService);
 
   isConnected = this._authService.isConnected;
   username = signal<string | null>(null);
+  logoPath = this._themeService.getLogoPath();
 
   constructor() {
     effect(() => {
