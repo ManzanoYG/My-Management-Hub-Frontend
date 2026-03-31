@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
-export type Theme = 'light' | 'dark' | 'retro';
+export type Theme = 'light' | 'dark' | 'retro' | 'lemonade';
 
 @Injectable({
   providedIn: 'root',
@@ -14,13 +14,16 @@ export class ThemeService  {
   private themes: Record<Theme, string> = {
     light: 'light-theme',
     dark: '',
-    retro: 'retro-theme'
+    retro: 'retro-theme',
+    lemonade: 'lemonade-theme'
   };
 
   private logoPaths: Record<Theme, string> = {
     light: 'assets/images/myManagementHubLogo_alt.webp',
     dark: 'assets/images/myManagementHubLogo.webp',
-    retro: 'assets/images/myManagementHubLogo_alt.webp'
+    retro: 'assets/images/myManagementHubLogo_alt.webp',
+    lemonade: 'assets/images/myManagementHubLogo_alt.webp'
+
   };
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
