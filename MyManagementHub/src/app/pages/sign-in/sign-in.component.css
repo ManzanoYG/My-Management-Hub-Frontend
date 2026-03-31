@@ -22,11 +22,6 @@ p {
   color: var(--text-color);
 }
 
-.invalid {
-  color: var(--invalid-text) !important;
-  font-size: 0.775rem;
-}
-
 .btn {
   background-color: var(--button-bg);
   border-color: var(--button-border);

@@ -41,7 +41,8 @@ body {
     --panel-bg: rgba(30, 34, 39, 0.86);
     --panel-border: rgba(255, 255, 255, 0.14);
 
-    --invalid-text: #ff6b6b;    
+    --invalid-text: #ff6b6b;
+    --valid-text: #28a745;    
     
     --showcase-bg: radial-gradient(circle at top right, #27303a 0%, #191d22 58%, #121417 100%);
     --showcase-bg-alt: radial-gradient(circle at top left, #27303a 0%, #191d22 58%, #121417 100%);
@@ -92,7 +93,8 @@ body {
     --panel-border: rgba(0, 0, 0, 0.14);
 
     --invalid-text: #ff6b6b;
-    
+    --valid-text: #28a745;   
+
     --showcase-bg: radial-gradient(circle at top right, #D8CFC5 0%, #E6E2DD 58%, #EDEBE8 100%);
     --showcase-bg-alt: radial-gradient(circle at top left, #D8CFC5 0%, #E6E2DD 58%, #EDEBE8 100%);
 
@@ -142,6 +144,7 @@ body {
     --panel-border: rgba(0, 0, 0, 0.14);
 
     --invalid-text: #ff6b6b;
+    --valid-text: #28a745;   
     
     --showcase-bg: radial-gradient(circle at top right, #DBCA9B 0%, #d8c798 58%, #e7d5a4 100%);
     --showcase-bg-alt: radial-gradient(circle at top left, #DBCA9B 0%, #d8c798 58%, #e7d5a4 100%);
@@ -192,7 +195,8 @@ body {
     --panel-border: rgba(0, 0, 0, 0.14);/**/
 
     --invalid-text: #ff6b6b;/**/
-    
+    --valid-text: #28a745;/**/
+
     --showcase-bg: radial-gradient(circle at top right, #d7e4c4 0%, #c8daaf 58%, #abc08e 100%);/**/
     --showcase-bg-alt: radial-gradient(circle at top left, #d7e4c4 0%, #c8daaf 58%, #abc08e 100%);/**/
 
@@ -208,4 +212,14 @@ body {
 
     --link-color-active: #e3e8db;/**/
     --link-bg-active: #e3e8db75;/**/
+}
+
+.invalid {
+  color: var(--invalid-text) !important;
+  font-size: 0.775rem;
+}
+
+.valid {
+  color: var(--valid-text) !important;
+  font-size: 0.775rem;
 }
