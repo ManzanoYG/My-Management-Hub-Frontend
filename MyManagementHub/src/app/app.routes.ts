@@ -28,7 +28,12 @@ export const routes: Routes = [
 			canActivate: [isAuthenticatedGuard, roleGuard],
 	},
 	{
+		path: 'not-found',
+		loadComponent: () =>
+			import('./features/not-found/not-found.component').then((m) => m.NotFound),
+	},
+	{
 		path: '**',
-		redirectTo: 'home',
+		redirectTo: 'not-found',
 	},
 ];
