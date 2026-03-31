@@ -1,1 +1,8 @@
-<p>button works!</p>
+<button
+      [type]="type"
+      [disabled]="disabled || loading"
+      class="btn"
+      (click)="onPress($event)"
+    >
+       {{ loading ? 'Chargement...' : label }}
+    </button>
