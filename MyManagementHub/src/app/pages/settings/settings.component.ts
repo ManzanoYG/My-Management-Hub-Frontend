@@ -11,9 +11,13 @@ type SettingsTab = 'profile' | 'security' | 'preferences' | 'notification' | 'ac
 })
 export class Settings {
   themes: Theme[] = [];
+  actualTheme: Theme;
+  selectedTheme: Theme;
 
   constructor(private themeService: ThemeService) {
     this.themes = this.themeService.getThemes();
+    this.actualTheme = this.themeService.getCurrentTheme();
+    this.selectedTheme = this.actualTheme;
   }
 
   activeTab = signal<SettingsTab>('profile');
@@ -26,7 +30,13 @@ export class Settings {
     return this.activeTab() === tab;
   }
 
-  changeTheme(theme: Theme) {
+  changeTheme(theme: Theme, event?: Event) {
+    event?.preventDefault();
     this.themeService.setTheme(theme);
+  }
+  
+  validatePreferences() {
+    this.selectedTheme = (document.getElementById('theme') as HTMLSelectElement).value as Theme;
+    this.changeTheme(this.selectedTheme);
   }
 }

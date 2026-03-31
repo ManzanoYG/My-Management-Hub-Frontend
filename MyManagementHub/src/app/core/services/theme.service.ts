@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
-export type Theme = 'light' | 'dark' | 'retro' | 'lemonade';
+export type Theme = 'Light' | 'Dark' | 'Retro' | 'Lemonade';
 
 @Injectable({
   providedIn: 'root',
@@ -9,20 +9,19 @@ export type Theme = 'light' | 'dark' | 'retro' | 'lemonade';
 export class ThemeService  {
   private storageKey = 'app-theme';
   private isBrowser: boolean;
-  private logoPath = 'assets/images/myManagementHubLogo.webp';
   
   private themes: Record<Theme, string> = {
-    light: 'light-theme',
-    dark: '',
-    retro: 'retro-theme',
-    lemonade: 'lemonade-theme'
+    Light: 'light-theme',
+    Dark: '',
+    Retro: 'retro-theme',
+    Lemonade: 'lemonade-theme'
   };
 
   private logoPaths: Record<Theme, string> = {
-    light: 'assets/images/myManagementHubLogo_alt.webp',
-    dark: 'assets/images/myManagementHubLogo.webp',
-    retro: 'assets/images/myManagementHubLogo_alt.webp',
-    lemonade: 'assets/images/myManagementHubLogo_alt.webp'
+    Light: 'assets/images/myManagementHubLogo_alt.webp',
+    Dark: 'assets/images/myManagementHubLogo.webp',
+    Retro: 'assets/images/myManagementHubLogo_alt.webp',
+    Lemonade: 'assets/images/myManagementHubLogo_alt.webp'
 
   };
 
@@ -57,14 +56,14 @@ export class ThemeService  {
     if (savedTheme) {
       this.setTheme(savedTheme);
     } else {
-      this.setTheme('dark');
+      this.setTheme('Dark');
     }
   }
 
   getCurrentTheme(): Theme {
-    if (!this.isBrowser) return 'dark';
+    if (!this.isBrowser) return 'Dark';
 
-    return (localStorage.getItem(this.storageKey) as Theme) || 'dark';
+    return (localStorage.getItem(this.storageKey) as Theme) || 'Dark';
   }
 
   getThemes(): Theme[] {
