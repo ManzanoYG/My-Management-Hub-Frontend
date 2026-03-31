@@ -3,10 +3,10 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { DtoInputSignUp } from './dto/dto-input-signup';
-import { AuthService } from '../../core/services/auth.service';
+import { DtoInputSignUp } from '../../../core/models/auth/dto-input-signup';
+import { AuthService } from '../../../core/services/auth.service';
 import { RouterLink, RouterLinkActive } from "@angular/router";
-import { UserService } from '../../core/services/user.service';
+import { UserService } from '../../../core/services/user.service';
 
 @Component({
   selector: 'app-sign-up',

@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
-import { AppRegistryService } from '../../core/apps/app-registry.service';
+import { AppRegistryService } from '../../core/app-registry/app-registry.service';
 import { JwtRoleService } from '../../core/auth/jwt-role.service';
 import { AuthService } from '../../core/services/auth.service';
 

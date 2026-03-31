@@ -2,8 +2,8 @@ import { Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap, catchError, of, map } from 'rxjs';
-import { DtoInputLogin } from '../../pages/sign-in/dto/dto-input-login';
-import { DtoOutputToken } from '../../pages/sign-in/dto/dto-output-token';
+import { DtoInputLogin } from '../models/auth/dto-input-login';
+import { DtoOutputToken } from '../models/auth/dto-output-token';
 
 @Injectable({
   providedIn: 'root',

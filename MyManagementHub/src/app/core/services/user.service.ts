@@ -1,10 +1,10 @@
 import { Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { DtoInputSignUp } from '../../pages/sign-up/dto/dto-input-signup';
+import { DtoInputSignUp } from '../models/auth/dto-input-signup';
 import { Observable, tap } from 'rxjs';
-import { DtoInputPassword } from '../../pages/settings/dto/dto-input-password';
-import { DtoOutputPassword } from '../../pages/settings/dto/dto-output-password';
+import { DtoInputPassword } from '../models/settings/dto-input-password';
+import { DtoOutputPassword } from '../models/settings/dto-output-password';
 
 
 @Injectable({

@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
@@ -7,13 +6,13 @@ import { JwtRoleService } from '../../core/auth/jwt-role.service';
 import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgOptimizedImage, RouterLink, RouterLinkActive],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
-export class Header {
+export class NavBar {
   private _authService = inject(AuthService);
   private _jwtRoleService = inject(JwtRoleService);
   private _cdr = inject(ChangeDetectorRef);
