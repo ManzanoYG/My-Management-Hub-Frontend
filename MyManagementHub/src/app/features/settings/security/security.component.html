@@ -1,0 +1,25 @@
+<h6>SECURITY SETTINGS</h6>
+<hr>
+<form [formGroup]="securityForm" (ngSubmit)="validateSecurity(securityForm.value)">
+    <div class="form-group">
+        <label class="d-block">Change Password</label>
+        <input type="password" class="form-control" placeholder="Enter your old password" formControlName="oldPassword">
+        <input type="password" class="form-control mt-1" placeholder="New password" formControlName="newPassword">
+        <input type="password" class="form-control mt-1" placeholder="Confirm new password" formControlName="newPasswordVerify">
+    </div>
+    <p class="invalid">
+        {{ errorChangePassword }}
+    </p>
+    <div class="d-flex justify-content-center mt-2">
+        <button type="submit" class="btn btn-primary">Update Password</button>
+    </div>
+</form>
+<hr>
+<form>
+    <div class="form-group">
+        <label class="d-block">Two Factor Authentication [WIP]</label>
+        <button class="btn btn-info" type="button">Enable two-factor authentication</button>
+        <p class="small text-muted mt-2">Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.</p>
+    </div>
+</form>
+<hr>
