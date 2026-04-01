@@ -3,10 +3,11 @@ import { JwtRoleService } from '../../../core/auth/jwt-role.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/user.service';
 import { Button } from "../../../shared/ui/button/button.component";
+import { Modal } from '../../../shared/ui/modal/modal.component';
 
 @Component({
   selector: 'app-security',
-  imports: [FormsModule, ReactiveFormsModule, Button],
+  imports: [FormsModule, ReactiveFormsModule, Button, Modal],
   templateUrl: './security.component.html',
   styleUrl: '../settings.component.css',
 })
@@ -52,5 +53,15 @@ export class Security {
         this.errorChangePassword = err.error.message || "An error occurred while changing the password.";
       }
     });
+  }
+
+  confirmPasswordUpdate() {
+    if (this.securityForm.invalid) {
+      this.errorChangePassword = 'Please complete all password fields.';
+      this.securityForm.markAllAsTouched();
+      return;
+    }
+
+    this.validateSecurity(this.securityForm.value);
   }
 }
