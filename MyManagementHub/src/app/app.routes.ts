@@ -33,6 +33,11 @@ export const routes: Routes = [
 			canActivate: [isAuthenticatedGuard, roleGuard],
 	},
 	{
+        path: 'notes',
+        loadChildren: () => import('./features/notes/notes-routing-module').then(m => m.NotesRouting),
+		canActivate: [isAuthenticatedGuard, roleGuard],
+	},
+	{
 		path: 'not-found',
 		loadComponent: () =>
 			import('./features/not-found/not-found.component').then((m) => m.NotFound),
