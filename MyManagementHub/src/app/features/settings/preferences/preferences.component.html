@@ -22,6 +22,6 @@
         <input type="text" class="form-control" id="appDisplay" aria-describedby="appDisplayHelp" placeholder="Enter your app display preference" value="">
     </div>
     <div class="d-flex justify-content-center">
-        <a type="button" class="btn btn-primary" (click)="validatePreferences()"><i class="fa-regular fa-circle-check"></i> Validate</a>
+        <app-shared-button label=" Validate" type="button" icon="fa-regular fa-circle-check" (pressed)="validatePreferences()"></app-shared-button>
     </div>
 </form>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Button } from "../../../shared/ui/button/button.component";
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [Button],
   templateUrl: './profile.component.html',
   styleUrl: '../settings.component.css',
 })

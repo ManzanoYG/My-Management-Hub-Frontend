@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Theme, ThemeService } from '../../../core/services/theme.service';
+import { Button } from "../../../shared/ui/button/button.component";
 
 @Component({
   selector: 'app-preferences',
-  imports: [],
+  imports: [Button],
   templateUrl: './preferences.component.html',
   styleUrl: '../settings.component.css',
 })

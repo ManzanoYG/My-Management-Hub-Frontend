@@ -22,19 +22,6 @@ p {
   color: var(--text-color);
 }
 
-.btn {
-  background-color: var(--button-bg);
-  border-color: var(--button-border);
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  color: var(--text-color);
-}
-
-.btn:hover {
-  background-color: var(--button-hover-bg);
-  border-color: var(--button-hover-border);
-}
-
 .form-control {
   border: 1px solid var(--form-border);
   background-color: var(--form-bg);

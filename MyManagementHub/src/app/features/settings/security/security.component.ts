@@ -2,10 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { JwtRoleService } from '../../../core/auth/jwt-role.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/user.service';
+import { Button } from "../../../shared/ui/button/button.component";
 
 @Component({
   selector: 'app-security',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, Button],
   templateUrl: './security.component.html',
   styleUrl: '../settings.component.css',
 })

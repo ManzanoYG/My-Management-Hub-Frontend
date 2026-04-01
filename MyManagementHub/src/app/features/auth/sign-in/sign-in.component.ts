@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { DtoInputLogin } from '../../../core/models/auth/dto-input-login';
 import { AuthService } from '../../../core/services/auth.service';
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Button } from "../../../shared/ui/button/button.component";
 
 @Component({
   selector: 'app-sign-in',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterLink, RouterLinkActive],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterLink, RouterLinkActive, Button],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css',
 })

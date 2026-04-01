@@ -7,10 +7,11 @@ import { DtoInputSignUp } from '../../../core/models/auth/dto-input-signup';
 import { AuthService } from '../../../core/services/auth.service';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { UserService } from '../../../core/services/user.service';
+import { Button } from "../../../shared/ui/button/button.component";
 
 @Component({
   selector: 'app-sign-up',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterLink, RouterLinkActive],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterLink, RouterLinkActive, Button],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
 })

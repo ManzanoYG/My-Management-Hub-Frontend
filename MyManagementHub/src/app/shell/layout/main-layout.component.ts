@@ -6,11 +6,12 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
 import { AppRegistryService } from '../../core/app-registry/app-registry.service';
 import { JwtRoleService } from '../../core/auth/jwt-role.service';
 import { AuthService } from '../../core/services/auth.service';
+import { Button } from "../../shared/ui/button/button.component";
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, Button],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css',
 })
