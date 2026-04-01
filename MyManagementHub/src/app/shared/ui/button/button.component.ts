@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-shared-button',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css',
 })
@@ -12,6 +13,9 @@ export class Button {
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() disabled = false;
   @Input() loading = false;
+  @Input() position: 'start' | 'center' | 'end' | '' = 'center';
+  @Input() icon: string | null = null;
+  @Input() large = false;
 
   @Output() pressed = new EventEmitter<void>();
 

@@ -8,3 +8,14 @@
   background-color: var(--button-hover-bg);
   border-color: var(--button-hover-border);
 }
+
+.btn-lg {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.fa-caret-right {
+  font-size: 1.2rem !important;
+  padding: 0 !important;
+  color: var(--icon-color);
+}

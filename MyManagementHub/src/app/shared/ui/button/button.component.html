@@ -1,8 +1,5 @@
-<button
-      [type]="type"
-      [disabled]="disabled || loading"
-      class="btn"
-      (click)="onPress($event)"
-    >
-       {{ loading ? 'Chargement...' : label }}
-    </button>
+<div class="d-flex justify-content-{{ position }}">
+   <button [type]="type" [disabled]="disabled || loading" class="btn" (click)="onPress($event)" [ngClass]="{ 'btn-lg': large }">
+      <i class="{{ icon }}"></i> {{ label}}
+   </button>
+</div>
