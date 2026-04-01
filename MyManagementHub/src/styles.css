@@ -59,6 +59,10 @@ body {
 
     --link-color-active: #8A8A8A;
     --link-bg-active: #8a8a8a75;
+
+    --danger-bg:rgba(134, 6, 6, 0.534);
+    --danger-border:#3a0202;
+    --danger-text:#ffffff;
 }
 
 .light-theme {
@@ -110,6 +114,10 @@ body {
 
     --link-color-active: #757575;
     --link-bg-active: #75757575;
+
+    --danger-bg:rgba(226, 40, 40, 0.856);
+    --danger-border:#3a0202a2;
+    --danger-text:#000000;
 }
 
 .retro-theme {
@@ -161,6 +169,10 @@ body {
 
     --link-color-active: #E0D1B5;
     --link-bg-active: #E0D1B575;
+
+    --danger-bg:rgba(182, 35, 35, 0.774);
+    --danger-border:#3a0202b6;
+    --danger-text:#000000;
 }
 
 .lemonade-theme {
@@ -212,6 +224,10 @@ body {
 
     --link-color-active: #e3e8db;/**/
     --link-bg-active: #e3e8db75;/**/
+
+    --danger-bg:rgba(182, 35, 35, 0.774);
+    --danger-border:#3a0202b6;
+    --danger-text:#000000;
 }
 
 .invalid {

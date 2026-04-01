@@ -18,6 +18,7 @@ export class Button {
   @Input() large = false;
   @Input() dataBsToggle: string | null = null;
   @Input() dataBsTarget: string | null = null;
+  @Input() danger = false;
 
   @Output() pressed = new EventEmitter<void>();
 

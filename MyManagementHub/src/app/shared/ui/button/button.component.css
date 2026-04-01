@@ -19,3 +19,9 @@
   padding: 0 !important;
   color: var(--icon-color);
 }
+
+.btn-danger {
+  background-color: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--danger-text) !important;
+}
