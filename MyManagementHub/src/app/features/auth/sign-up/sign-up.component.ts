@@ -29,7 +29,7 @@ export class SignUp {
       password: ['', [Validators.required]],
       passwordVerify: ['', [Validators.required]]
     });
-    this.signupData = { userName: '', password: ''};
+    this.signupData = { userName: '', password: '', timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone };
   }
 
   signup(value: any) {
