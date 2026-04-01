@@ -5,6 +5,11 @@ import { isNotAuthenticatedGuard } from './core/guards/not-authenticated.guard';
 
 export const routes: Routes = [
 	{
+		path: '',
+		redirectTo: 'home',
+		pathMatch: 'full',
+	},
+	{
 		path: 'home',
 		loadComponent: () =>
 			import('./shell/layout/main-layout.component').then((m) => m.MainLayout),
