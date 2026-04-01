@@ -14,3 +14,14 @@
 .modal {
     top: 12.5%;
 }
+
+.btn-danger {
+  background-color: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--danger-text) !important;
+}
+
+.btn:hover{
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+}

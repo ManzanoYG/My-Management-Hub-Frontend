@@ -11,6 +11,9 @@ export class Modal {
   @Input() title: string = '';
   @Input() body: string = '';
   @Input() icon: string = '';
+  @Input() confirmButtonLabel: string = 'Confirm';
+  @Input() cancelButtonLabel: string = 'Cancel';
+  @Input() confirmButtonClass: string = '';
 
   @Output() pressed = new EventEmitter<void>();
 
