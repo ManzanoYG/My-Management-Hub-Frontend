@@ -16,6 +16,8 @@ export class Button {
   @Input() position: 'start' | 'center' | 'end' | '' = 'center';
   @Input() icon: string | null = null;
   @Input() large = false;
+  @Input() dataBsToggle: string | null = null;
+  @Input() dataBsTarget: string | null = null;
 
   @Output() pressed = new EventEmitter<void>();
 

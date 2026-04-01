@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-{{ position }}">
-   <button [type]="type" [disabled]="disabled || loading" class="btn" (click)="onPress($event)" [ngClass]="{ 'btn-lg': large }">
+   <button [type]="type" [disabled]="disabled || loading" class="btn" (click)="onPress($event)" [ngClass]="{ 'btn-lg': large }" [attr.data-bs-toggle]="dataBsToggle" [attr.data-bs-target]="dataBsTarget">
       <i class="{{ icon }}"></i> {{ label}}
    </button>
 </div>
