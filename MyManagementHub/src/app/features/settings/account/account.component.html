@@ -5,7 +5,9 @@
         <label class="d-block text-danger">Delete Account</label>
         <p class="text-muted font-size-sm">Once you delete your account, there is no going back. Please be certain.</p>
     </div>
-    <div class="d-flex justify-content-center">
-        <app-shared-button label="Delete Account" (pressed)="test()" type="button" [danger]="true"></app-shared-button>
+    <div class="d-flex justify-content-center mt-2">
+        <app-shared-button label="Delete Account" type="button" [dataBsToggle]="'modal'" [dataBsTarget]="'#confirm-delete-modal'" [danger]="true"></app-shared-button>
     </div>
+    <p class="invalid mt-2 text-center">{{ errorDeleteAccount }}</p>
+    <app-modal modalId="confirm-delete-modal" title="Confirm account deletion" body="{{ bodyDeleteAccount }}" (pressed)="deleteAccount()" icon="fa-solid fa-trash" confirmButtonLabel="Delete Account" cancelButtonLabel="Cancel" confirmButtonClass="btn-danger"></app-modal>
 </form>
