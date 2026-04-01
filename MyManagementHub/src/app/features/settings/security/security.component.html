@@ -13,7 +13,7 @@
     <div class="d-flex justify-content-center mt-2">
         <app-shared-button label="Update Password" type="button" [dataBsToggle]="'modal'" [dataBsTarget]="'#confirm-password-modal'"></app-shared-button>
     </div>
-    <app-modal modalId="confirm-password-modal" title="Confirm password change" body="Are you sure you want to update your password?" (pressed)="confirmPasswordUpdate()"></app-modal>
+    <app-modal modalId="confirm-password-modal" title="Confirm password change" body="Are you sure you want to update your password?" (pressed)="confirmPasswordUpdate()" icon="fa-solid fa-lock"></app-modal>
 </form>
 <hr>
 <form>

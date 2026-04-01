@@ -1,5 +1,16 @@
 .modal-content {
     background-color: var(--card-bg);
-    border: var(--card-border);
     color: var(--text-color);
+}
+.modal-header {
+    border-bottom: 1px solid var(--card-border);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--card-border);
+    justify-content: center;
+}
+
+.modal {
+    top: 12.5%;
 }

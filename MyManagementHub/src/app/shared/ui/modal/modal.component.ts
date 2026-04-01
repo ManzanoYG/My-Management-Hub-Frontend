@@ -10,6 +10,7 @@ export class Modal {
   @Input() modalId: string = 'modal';
   @Input() title: string = '';
   @Input() body: string = '';
+  @Input() icon: string = '';
 
   @Output() pressed = new EventEmitter<void>();
 
