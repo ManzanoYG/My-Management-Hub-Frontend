@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
 })
-export class Modal {}
+export class Modal {
+  @Input() modalId: string = 'modal';
+  @Input() title: string = '';
+  @Input() body: string = '';
+
+  @Output() pressed = new EventEmitter<void>();
+
+  onPress(event: MouseEvent): void {
+    event.preventDefault();
+    this.pressed.emit();
+  }
+}

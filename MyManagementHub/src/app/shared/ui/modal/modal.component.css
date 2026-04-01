@@ -1,0 +1,5 @@
+.modal-content {
+    background-color: var(--card-bg);
+    border: var(--card-border);
+    color: var(--text-color);
+}
