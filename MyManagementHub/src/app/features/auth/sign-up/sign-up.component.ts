@@ -19,6 +19,7 @@ export class SignUp {
   passwordFieldTextType: boolean = false;
   passwordFieldTextTypeVerify: boolean = false;
   errorPassword = signal(false);
+  message = signal('');
   signupData: DtoInputSignUp;
   form: FormGroup;
 
@@ -39,8 +40,12 @@ export class SignUp {
       console.log(this.signupData);
       this._userService.signup(this.signupData).subscribe({
         next: (response) => {
-          //this._router.navigate(['login']);
+          this.message.set('Sign up successful. You will be redirected to the sign-in page.');
+          setTimeout(() => {
+            this._router.navigate(['sign-in']);
+          }, 2000);
           this.errorPassword.set(false);
+          
         },
         error: (err) => {
           console.log(err);
