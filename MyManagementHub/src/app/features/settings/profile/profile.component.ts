@@ -7,4 +7,8 @@ import { Button } from "../../../shared/ui/button/button.component";
   templateUrl: './profile.component.html',
   styleUrl: '../settings.component.css',
 })
-export class Profile {}
+export class Profile {
+  timezones = Intl.supportedValuesOf('timeZone');
+  filteredTimezones: string[] = [];
+  actualTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
