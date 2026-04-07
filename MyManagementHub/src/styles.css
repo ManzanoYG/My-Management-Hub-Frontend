@@ -10,6 +10,23 @@ body {
   background-color: var(--body-bg);
 }
 
+.card-text {
+  margin-bottom: 25px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--card-bg);
+    background-clip: border-box;
+    border: 0 solid var(--card-border);
+    border-radius: .25rem;
+    color: var(--text-color);
+}
+
 :root {
     --body-bg: #121212;
 

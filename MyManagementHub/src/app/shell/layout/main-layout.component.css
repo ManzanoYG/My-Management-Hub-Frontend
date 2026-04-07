@@ -1,9 +1,3 @@
-.card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--card-border);
-}
-
 .app-icon {
   font-size: 1.2rem;
   color: var(--icon-color);
@@ -16,8 +10,4 @@
   padding: 0.55rem !important;
   max-width: fit-content;
   font-size: 0.775rem;
-}
-
-.card-text {
-  margin-bottom: 25px;
 }
