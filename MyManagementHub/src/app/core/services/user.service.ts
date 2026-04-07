@@ -5,7 +5,6 @@ import { DtoInputSignUp } from '../models/auth/dto-input-signup';
 import { Observable, tap } from 'rxjs';
 import { DtoInputPassword } from '../models/settings/dto-input-password';
 import { DtoOutputPassword } from '../models/settings/dto-output-password';
-import { DtoInputDelete } from '../models/settings/dto-input-delete';
 import { DtoOutputDelete } from '../models/settings/dto-output-delete';
 
 @Injectable({
@@ -31,9 +30,10 @@ export class UserService {
     return this._httpClient.put<DtoOutputPassword>(`${UserService._BASE_URL_API}/changePassword`, dto, { withCredentials: true });
   }
 
-  deleteUser(dto: DtoInputDelete): Observable<DtoOutputDelete> {
-    return this._httpClient.delete<DtoOutputDelete>(`${UserService._BASE_URL_API}/${dto.username}`, { withCredentials: true }).pipe(
+  deleteUser(): Observable<DtoOutputDelete> {
+    return this._httpClient.delete<DtoOutputDelete>(`${UserService._BASE_URL_API}`, { withCredentials: true }).pipe(
       tap(() => this._isConnected.set(false))
     );
   }
 }
+

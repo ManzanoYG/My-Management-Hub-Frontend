@@ -12,21 +12,13 @@ import { Modal } from "../../../shared/ui/modal/modal.component";
   styleUrl: '../settings.component.css',
 })
 export class Account {
-  private _jwtRoleService = inject(JwtRoleService);
   private _userService = inject(UserService);
   private _authService = inject(AuthService);
-  private username = signal<string | null>(null);
   bodyDeleteAccount = "Are you sure you want to delete your account? This action is irreversible and all your data will be permanently lost.";
   errorDeleteAccount = '';
 
-  constructor() {
-    this._jwtRoleService.getUsername().subscribe(username => {
-        this.username.set(username);
-    });
-  }
-
   deleteAccount(): void {
-    this._userService.deleteUser({ username: this.username()! }).subscribe({
+    this._userService.deleteUser().subscribe({
       next: (response) => {
         if(response.deleted) {
           this._authService.logout().subscribe();

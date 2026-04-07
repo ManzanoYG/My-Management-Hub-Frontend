@@ -1,5 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
-import { JwtRoleService } from '../../../core/auth/jwt-role.service';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/user.service';
 import { Button } from "../../../shared/ui/button/button.component";
@@ -12,9 +11,7 @@ import { Modal } from '../../../shared/ui/modal/modal.component';
   styleUrl: '../settings.component.css',
 })
 export class Security {
-  private _jwtRoleService = inject(JwtRoleService);
   private _userService = inject(UserService);
-  private username = signal<string | null>(null);
   
   securityForm: FormGroup;
   errorChangePassword = '';
@@ -25,9 +22,6 @@ export class Security {
       newPassword: ['', [Validators.required]],
       newPasswordVerify: ['', [Validators.required]]
     });
-    this._jwtRoleService.getUsername().subscribe(username => {
-        this.username.set(username);
-    });
   }
 
   validateSecurity(value: any) {
@@ -37,7 +31,6 @@ export class Security {
     }
     this.errorChangePassword = '';
     this._userService.changePassword({
-      username: this.username()!,
       oldPassword: value.oldPassword,
       newPassword: value.newPassword
     }).subscribe({

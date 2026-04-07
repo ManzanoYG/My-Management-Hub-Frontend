@@ -20,6 +20,17 @@ export class JwtRoleService {
       );
   }
 
+  getUserId(): Observable<string | null> {
+    return this.http
+      .get<{ userID: string }>('https://localhost:7257/api/authentication/me', {
+        withCredentials: true
+      })
+      .pipe(
+        map(res => res.userID || null),
+        catchError(() => of(null))
+      );
+  }
+
   getUsername(): Observable<string | null> {
     return this.http
       .get<{ username: string }>('https://localhost:7257/api/authentication/me', {
