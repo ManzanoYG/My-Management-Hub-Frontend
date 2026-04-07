@@ -1,0 +1,64 @@
+.card-top {
+    color: var(--text-color)!important;
+    width: 100% !important;
+}
+
+.text-muted, label, h6 {
+    color: var(--text-color) !important;
+}
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+
+    background-color: var(--card-bg);
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    #note-history {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .float {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+.my-float {
+    margin-top: 22px;
+}
+
+.float:hover {
+    transform: scale(1.1);
+    background-color: var(--button-hover-bg);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}

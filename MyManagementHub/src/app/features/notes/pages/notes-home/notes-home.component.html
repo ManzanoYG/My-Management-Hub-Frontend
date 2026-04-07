@@ -1,1 +1,34 @@
-<p>notes-home works!aaaaaaaaaaaaaaaaaaaaaa</p>
+<div class="card card-top" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Notes Project</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">You can manage your notes here.</p>
+        <button type="button" class="card-link btn btn-link p-0">Card link</button>
+        <button type="button" class="card-link btn btn-link p-0">Another link</button>
+  </div>
+</div>
+<div class="row mt-3">
+    <div id="favorites" class="col-sm-6">
+        <div class="card card-top" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fa-solid fa-star"></i> Favorites</h5>
+                <div class="card-content">
+                <app-notes-pinned-list></app-notes-pinned-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="note-history" class="col-sm-6">
+        <div class="card card-top" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fa-solid fa-clock"></i> Note history</h5>
+                <div class="card-content">
+                <app-notes-all-list></app-notes-all-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" (click)="createNote()" class="float" title="Add new item" aria-label="Create note">
+    <i class="fa fa-plus"></i>
+</button>
