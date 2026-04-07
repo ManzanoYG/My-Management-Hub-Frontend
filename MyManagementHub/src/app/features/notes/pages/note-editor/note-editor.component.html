@@ -1,0 +1,119 @@
+<section class="note-editor-container" dir="ltr">
+  <div class="editor-header">
+    <h2>{{ editorHeader() }}</h2>
+  </div>
+
+  <form class="note-form" (submit)="$event.preventDefault(); requestSave()">
+    <div class="form-group">
+      <label for="title">{{ titleLabel() }}</label>
+      <input
+        id="title"
+        type="text"
+        dir="ltr"
+        [value]="titleValue()"
+        (input)="onTitleInput($event)"
+        class="form-control"
+        [placeholder]="titlePlaceholder()"
+        maxlength="255"
+      />
+    </div>
+
+    <!-- Barre d'outils -->
+    <div class="toolbar">
+      <div class="toolbar-section">
+        <button type="button" (click)="toggleBold()" class="btn-tool" title="Gras (Ctrl+B)">
+          <i class="fas fa-bold"></i>
+        </button>
+        <button type="button" (click)="toggleItalic()" class="btn-tool" title="Italique (Ctrl+I)">
+          <i class="fas fa-italic"></i>
+        </button>
+        <button type="button" (click)="toggleUnderline()" class="btn-tool" title="Souligné (Ctrl+U)">
+          <i class="fas fa-underline"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-section">
+        <button type="button" (click)="insertHeading(1)" class="btn-tool" title="Titre 1">
+          H1
+        </button>
+        <button type="button" (click)="insertHeading(2)" class="btn-tool" title="Titre 2">
+          H2
+        </button>
+        <button type="button" (click)="insertHeading(3)" class="btn-tool" title="Titre 3">
+          H3
+        </button>
+      </div>
+
+      <div class="toolbar-section">
+        <button type="button" (click)="alignLeft()" class="btn-tool" title="Aligner à gauche">
+          <i class="fas fa-align-left"></i>
+        </button>
+        <button type="button" (click)="alignCenter()" class="btn-tool" title="Centrer">
+          <i class="fas fa-align-center"></i>
+        </button>
+        <button type="button" (click)="alignRight()" class="btn-tool" title="Aligner à droite">
+          <i class="fas fa-align-right"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-section">
+        <button type="button" (click)="insertUnorderedList()" class="btn-tool" title="Liste à puces">
+          <i class="fas fa-list-ul"></i>
+        </button>
+        <button type="button" (click)="insertOrderedList()" class="btn-tool" title="Liste numérotée">
+          <i class="fas fa-list-ol"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-section">
+        <button type="button" (click)="insertCode()" class="btn-tool" title="Code">
+          <i class="fas fa-code"></i>
+        </button>
+        <button type="button" (click)="insertLink()" class="btn-tool" title="Insérer un lien">
+          <i class="fas fa-link"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-section">
+        <button type="button" (click)="removeFormatting()" class="btn-tool btn-danger" title="Effacer le formatage">
+          <i class="fas fa-eraser"></i>
+        </button>
+        <button type="button" (click)="clearEditor()" class="btn-tool btn-danger" title="Effacer tout">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Éditeur -->
+    <div class="editor-wrapper">
+      <label for="editor" class="editor-label">{{ contentLabel() }}</label>
+      <div
+        #editor
+        id="editor"
+        class="editor"
+        dir="ltr"
+        contenteditable="true"
+        [attr.placeholder]="contentPlaceholder()"
+        (input)="onContentInput($event)"
+      ></div>
+    </div>
+
+    <!-- Message d'erreur -->
+    @if (errorMessage()) {
+      <div class="error-message">
+        {{ errorMessage() }}
+      </div>
+    }
+
+    <!-- Boutons d'action -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="isSubmitting()">
+        <i class="fas fa-save"></i>
+        {{ isSubmitting() ? 'Sauvegarde...' : saveButtonLabel() }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="clearEditor()">
+        Réinitialiser
+      </button>
+    </div>
+  </form>
+</section>
