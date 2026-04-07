@@ -1,0 +1,27 @@
+@if (store.loading()) {
+  <div class="loading-spinner">Loading...</div>
+}
+
+<div class="notes-list">
+  @for (note of store.notes(); track note.id) {
+    <div class="note-card" [class.expanded]="expandedNotes().has(note.id)">
+      <div class="note-header">
+        <strong class="note-title" [title]="note.title">{{ note.title }}</strong>
+      </div>
+      
+      <div class="note-body">
+        <div class="note-content" [innerHTML]="note.content"></div>
+      </div>
+      
+      <!-- Bouton d'extension en chevron-down (flèche) -->
+      <button class="btn-expand" [class.expanded]="expandedNotes().has(note.id)" (click)="toggleExpand(note.id)" title="Étendre la note">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+  }
+  @if (store.notes().length === 0) {
+    <div class="no-notes">No notes found.</div>
+  }
+</div>

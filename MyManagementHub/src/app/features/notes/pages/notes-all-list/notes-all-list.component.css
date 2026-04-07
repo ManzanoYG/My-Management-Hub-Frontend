@@ -1,0 +1,118 @@
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 1rem;
+}
+
+.note-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 2;
+  min-width: 0;
+}
+
+.note-icon {
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+.note-title {
+  font-size: 1.1rem;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  transition: -webkit-line-clamp 0.3s ease;
+}
+
+.note-body {
+  flex: 1.5;
+  color: #4b5563;
+  margin: 0 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  min-width: 0;
+  transition: -webkit-line-clamp 0.3s ease;
+}
+
+/* --- ETATS DÉROULÉS --- */
+.note-card.expanded {
+  align-items: flex-start;
+}
+
+.note-card.expanded .note-title,
+.note-card.expanded .note-body {
+  -webkit-line-clamp: 5;
+}
+
+.btn-expand {
+  background: transparent;
+  border: none;
+  color: #9ca3af; 
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-expand:hover {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.btn-expand.expanded {
+  transform: rotate(180deg);
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #fee2e2;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .note-card { background: #1f2937; border-color: #374151; }
+  .note-title, .note-body { color: #f3f4f6; }
+}
