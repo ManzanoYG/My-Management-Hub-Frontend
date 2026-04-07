@@ -1,0 +1,12 @@
+<app-note-editor
+	[editorHeader]="editorHeader"
+	[saveButtonLabel]="saveButtonLabel"
+	[titleValue]="title()"
+	[contentValue]="content()"
+	[isSubmitting]="isSubmitting()"
+	[errorMessage]="errorMessage()"
+	(titleValueChange)="onTitleChange($event)"
+	(contentValueChange)="onContentChange($event)"
+	(saveRequested)="saveNote()"
+	(clearRequested)="resetForm()"
+></app-note-editor>
