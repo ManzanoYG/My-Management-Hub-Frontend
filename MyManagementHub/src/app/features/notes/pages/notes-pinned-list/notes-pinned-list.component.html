@@ -1,0 +1,32 @@
+@if (store.loading()) {
+  <div class="loading-spinner">Loading...</div>
+}
+
+<div class="notes-list">
+  @for (note of store.notesPinned(); track note.id) {
+    <div class="note-card" [class.expanded]="expandedNotes().has(note.id)">
+      <div class="note-header">
+        <!-- Icône d'épingle (ou autre icône moderne) -->
+        <svg class="note-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="17" x2="12" y2="22"></line>
+          <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.6V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.6a2 2 0 0 1-1.11 1.96l-1.78.9A2 2 0 0 0 5 15.24Z"></path>
+        </svg>
+        <strong class="note-title" [title]="note.title">{{ note.title }}</strong>
+      </div>
+      
+      <div class="note-body">
+        <div class="note-content" [innerHTML]="note.content"></div>
+      </div>
+      
+      <!-- Bouton d'extension en chevron-down (flèche) -->
+      <button class="btn-expand" [class.expanded]="expandedNotes().has(note.id)" (click)="toggleExpand(note.id)" title="Étendre la note">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+  }
+  @if (store.notesPinned().length === 0) {
+    <div class="no-notes">No notes found.</div>
+  }
+</div>
